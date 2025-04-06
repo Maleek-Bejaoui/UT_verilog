@@ -1,6 +1,3 @@
-`timescale 1ns / 1ps
-
-
 module Accu_register (
     input wire clk,
     input wire ce,
