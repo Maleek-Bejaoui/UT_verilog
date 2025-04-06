@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module Carry_register (
     input wire clk,
     input wire rst,
