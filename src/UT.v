@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module UT (
     input wire clk,
     input wire rst,
