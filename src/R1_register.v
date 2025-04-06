@@ -1,6 +1,3 @@
-`timescale 1ns / 1ps
-
-
 module R1_register (
     input wire clk,
     input wire rst,
