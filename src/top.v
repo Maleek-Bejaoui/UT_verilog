@@ -24,7 +24,7 @@ module tt_um_top (
 //  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
     assign uio_out = 0;
     assign uio_oe  = 0;
-    assign uo_out[7:1]  = 7'b0000000;
+    assign uo_out[7:4]  = 4'b0000;
 
     
 
@@ -39,11 +39,11 @@ module tt_um_top (
       .rst  (!rst_n),    
       .clk  (clk), 
       .ce (ena),  
-      .sel_UAL(ui_in[2:0]),
-      .load_R1(ui_in[3]),
-      .load_accu(ui_in[4]),
-      .load_carry(ui_in[5]),
-      .init_carry(ui_in[6]),
+      .sel_UAL(),
+      .load_R1(ui_in[0]),
+      .load_accu(ui_in[1]),
+      .load_carry(ui_in[2]),
+      .init_carry(ui_in[3]),
       .data_in(),
       .carry(uo_out[0]),
       .data_out()
