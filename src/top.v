@@ -48,6 +48,6 @@ module tt_um_top (
       .carry(uo_out[0]),
       .data_out()
   );
-/* verilator lint_on PINCONNECTEMPTY */
     endmodule
+/* verilator lint_on PINCONNECTEMPTY */
 
