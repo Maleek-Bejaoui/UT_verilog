@@ -29,7 +29,7 @@ module tt_um_top (
     
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ui_in[7:4], 4'b0000};
+    wire _unused = &{ui_in[7], 1'b0};
     wire _unused1 = &{uio_in, 8'b0};
     
 
