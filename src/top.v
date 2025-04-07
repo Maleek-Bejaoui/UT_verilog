@@ -24,34 +24,30 @@ module tt_um_top (
 //  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
     assign uio_out = 0;
     assign uio_oe  = 0;
-   // assign uo_out[7:4]  = 4'b0000;
+    assign uo_out[7:1]  = 7'b0000000;
 
     
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ui_in[7:2], 6'b000000};
+    wire _unused = &{ui_in[7], 1'b0};
     wire _unused1 = &{uio_in, 8'b0};
     
 
     
    /* verilator lint_off PINCONNECTEMPTY */
-  Control_Unit m_Control_Unit (
-      .rst  (!rst_n),    // Clock input
-      .clk  (clk), // Reset input
-      .ce (ena),  // 8-bit counter output
-
-      .w_mem(uo_out[0]),
-      .sel_UAL(uo_out[3:1]),
-      .enable_mem(uo_out[4]),
-      .load_carry(uo_out[5]),
-      .load_accu(uo_out[6]),
-      .load_R1(uo_out[7]),
-      .clear_carry(),
-      .adr(),
-      .carry(ui_in[0]),
-      .boot(ui_in[1]),
-      .data_in()
+  UT m_UT (
+      .rst  (!rst_n),    
+      .clk  (clk), 
+      .ce (ena),  
+      .sel_UAL(ui_in[2:0]),
+      .load_R1(ui_in[3]),
+      .load_accu(ui_in[4]),
+      .load_carry(ui_in[5]),
+      .init_carry(ui_in[6]),
+      .data_in(),
+      .carry(uo_out[0]),
+      .data_out()
   );
-    endmodule
 /* verilator lint_on PINCONNECTEMPTY */
+    endmodule
 
