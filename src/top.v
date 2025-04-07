@@ -39,7 +39,7 @@ module tt_um_top (
       .rst  (!rst_n),    
       .clk  (clk), 
       .ce (ena),  
-      .sel_UAL(),
+      .sel_UAL(ui_in[6:4]),
       .load_R1(ui_in[0]),
       .load_accu(ui_in[1]),
       .load_carry(ui_in[2]),
